@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import CampaignActions from '@/components/campaign-actions';
+import HeroUtilities from '@/components/hero-utilities';
 import ShareButton from '@/components/share-button';
 import { DetentionCounter, TemplateControls } from '@/components/template-controls';
 import { getSupportersCount } from '@/lib/support-db';
@@ -44,8 +45,12 @@ export default function HomePage() {
                 </span>
               </p>
 
-              <CampaignActions supportersCount={supportersCount} />
-              <DetentionCounter />
+              <CampaignActions />
+              <div className="counter-row">
+                <DetentionCounter />
+              </div>
+
+              <HeroUtilities />
             </div>
 
             <div className="hero-image-wrap">
@@ -74,7 +79,6 @@ export default function HomePage() {
               <div className="fact-card">
                 <div className="fact-card-head">
                   <div className="tech-mono head-amber">/// ОСНОВНІ_ДАНІ</div>
-                  <img className="dossier-photo" src="/img/full-face-kuznetsov.jpeg" alt="Сергій Кузнєцов" />
                 </div>
 
                 <div className="fact-item">
@@ -105,7 +109,6 @@ export default function HomePage() {
               <div className="fact-card fact-card-red">
                 <div className="fact-card-head">
                   <div className="tech-mono head-red">/// СПРАВА_ДЕТАЛІ</div>
-                  <img className="dossier-photo" src="/img/germany-detention.jpeg" alt="Матеріали справи" />
                 </div>
 
                 <p className="case-intro">
@@ -147,8 +150,8 @@ export default function HomePage() {
               </div>
 
               <div className="warning-box">
-                <div className="warning-title tech-mono">[!] Critical_Alert: Політичний Резонанс</div>
-                <div>
+                <div className="warning-copy">
+                  <div className="warning-title tech-mono">[!] Critical_Alert: Політичний Резонанс</div>
                   <p>
                     <span className="lang-ua">
                       Справа щодо "Північного потоку" має винятково стратегічний та політичний характер. Сергій не
@@ -160,9 +163,23 @@ export default function HomePage() {
                     </span>
                   </p>
                 </div>
-                <img className="warning-media" src="/img/italy-arrest.jpeg" alt="Арешт в Італії" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-header reveal">
+            <span className="section-num tech-mono">File_01A</span>
+            <h2 className="section-title rugged-header">Галерея матеріалів</h2>
+          </div>
+
+          <div className="gallery-grid reveal">
+            <img src="/img/full-face-kuznetsov.jpeg" alt="Сергій Кузнєцов — портрет" className="gallery-image" />
+            <img src="/img/germany-detention.jpeg" alt="Матеріали справи в Німеччині" className="gallery-image" />
+            <img src="/img/italy-arrest.jpeg" alt="Матеріали про затримання в Італії" className="gallery-image" />
           </div>
         </div>
       </section>
@@ -252,6 +269,20 @@ export default function HomePage() {
 
       <section id="help" className="section">
         <div className="container">
+          <div className="supporters-top-card reveal">
+            <div className="days-counter supporters-counter">
+              <div className="hazard-stripe" />
+              <div className="days-data">
+                <div className="days-number">{String(supportersCount).padStart(3, '0')}</div>
+                <div className="days-label">
+                  <span className="lang-ua">Підтримали звернення</span>
+                  <span className="lang-en">Supporters Signed</span>
+                </div>
+              </div>
+              <div className="hazard-stripe" />
+            </div>
+          </div>
+
           <div className="section-header reveal">
             <span className="section-num tech-mono">File_05</span>
             <h2 className="section-title rugged-header">Як ви можете допомогти</h2>
@@ -273,7 +304,7 @@ export default function HomePage() {
                 <p>Фінансова допомога на юридичний захист оперативника.</p>
               </div>
               <Link href="/donate" className="btn btn-primary">
-                Donate
+                ПІДТРИМАТИ
               </Link>
             </div>
             <div className="help-card reveal">
@@ -281,7 +312,7 @@ export default function HomePage() {
                 <h3 className="help-title tech-mono">03_Share</h3>
                 <p>Розповсюдження інформації — це захист від невідомості.</p>
               </div>
-              <ShareButton label="Share" />
+              <ShareButton label="ПОШИРИТИ" />
             </div>
           </div>
         </div>

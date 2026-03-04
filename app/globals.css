@@ -143,6 +143,20 @@ body {
   color: #fff;
 }
 
+.btn-utility {
+  padding: 8px 12px;
+  font-size: 0.7rem;
+  border: 1px solid rgba(224, 224, 224, 0.45);
+  color: rgba(224, 224, 224, 0.8);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.btn-utility:hover {
+  border-color: var(--tactical-amber);
+  color: var(--tactical-amber);
+  transform: none;
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -295,6 +309,38 @@ body {
   color: #fff;
 }
 
+.counter-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.counter-row .days-counter {
+  margin-top: 30px;
+}
+
+.supporters-counter .days-number {
+  letter-spacing: 0.03em;
+}
+
+.hero-utility-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.supporters-top-card {
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.supporters-top-card .days-counter {
+  margin-top: 0;
+}
+
 .section {
   padding: 120px 0;
   border-top: 1px solid #ddd;
@@ -335,10 +381,7 @@ body {
 }
 
 .fact-card-head {
-  display: grid;
-  grid-template-columns: 1fr minmax(220px, 320px);
-  gap: 24px;
-  align-items: start;
+  display: block;
   margin-bottom: 24px;
 }
 
@@ -354,13 +397,6 @@ body {
 .case-intro {
   margin-bottom: 25px;
   color: #4a4a4a;
-}
-
-.dossier-photo {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  border: 2px solid #d9d9d9;
 }
 
 .fact-item {
@@ -401,10 +437,7 @@ body {
   background: #fff5f5;
   border: 1px solid var(--tactical-red);
   border-left: 8px solid var(--tactical-red);
-  display: grid;
-  grid-template-columns: 1fr minmax(180px, 240px);
-  gap: 18px;
-  align-items: start;
+  display: block;
 }
 
 .warning-title {
@@ -413,15 +446,26 @@ body {
   margin-bottom: 10px;
 }
 
+.warning-copy {
+  display: flex;
+  flex-direction: column;
+}
+
 .warning-box p {
   color: #1a1a1a;
 }
 
-.warning-media {
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gallery-image {
   width: 100%;
-  height: 160px;
+  height: 260px;
   object-fit: cover;
-  border: 2px solid rgba(179, 0, 0, 0.35);
+  border: 2px solid #d9d9d9;
 }
 
 .timeline-scroll {
@@ -484,6 +528,24 @@ body {
 }
 
 .help-card p {
+  color: #4a4a4a;
+}
+
+.help-card .btn-outline {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+.help-card .btn-outline:hover {
+  border-color: var(--tactical-amber);
+  background: var(--tactical-amber);
+  color: #000;
+}
+
+.share-status {
+  margin-top: 8px;
+  font-size: 0.85rem;
   color: #4a4a4a;
 }
 
@@ -664,6 +726,14 @@ body {
     justify-content: center;
   }
 
+  .hero-utility-actions {
+    justify-content: center;
+  }
+
+  .supporters-top-card {
+    justify-content: center;
+  }
+
   .case-column {
     gap: 24px;
   }
@@ -698,6 +768,10 @@ body {
     margin-right: auto;
   }
 
+  .counter-row {
+    justify-content: center;
+  }
+
   .days-data {
     flex: 1;
     padding: 10px 18px;
@@ -718,22 +792,16 @@ body {
   }
 
   .fact-card-head {
-    grid-template-columns: 1fr;
-    gap: 14px;
     margin-bottom: 18px;
   }
 
-  .dossier-photo {
-    height: 180px;
-  }
-
-  .warning-box,
+  .gallery-grid,
   .donate-grid {
     grid-template-columns: 1fr;
   }
 
-  .warning-media {
-    height: 170px;
+  .gallery-image {
+    height: 220px;
   }
 
   .timeline-scroll {
@@ -758,6 +826,16 @@ body {
   .hero-actions,
   .actions-row,
   .meta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-utility-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .counter-row {
     flex-direction: column;
     align-items: stretch;
   }
