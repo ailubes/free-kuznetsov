@@ -1,0 +1,16 @@
+{
+  "name": "free-kuznetsov-next",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "next": "^16.1.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
+}

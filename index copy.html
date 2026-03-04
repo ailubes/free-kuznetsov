@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="uk" data-lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Serhii Kuznetsov - Ukrainian Special Operations Forces soldier detained in Germany">
+    <title>FREE KUZNETSOV | Свободу Сергію Кузнєцову</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-graphite: #1e293b;
+            --accent-yellow: #facc15;
+            --accent-yellow-hover: #eab308;
+            --accent-red: #ef4444;
+            --accent-green: #22c55e;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --archival-layer: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Materiality: Archival Grid Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        /* Language switching */
+        [data-lang="ua"] .lang-en,
+        [data-lang="en"] .lang-ua {
+            display: none !important;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            gap: 4px;
+            background: var(--bg-graphite);
+            padding: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-dim);
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-yellow);
+            color: #000;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--text-main);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 32px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-yellow-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(250, 204, 21, 0.2);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--text-main);
+            color: var(--bg-dark);
+        }
+
+        .btn-green {
+            background-color: var(--accent-green);
+            color: #000;
+        }
+
+        .btn-green:hover {
+            background-color: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-label {
+            color: var(--accent-yellow);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 32px;
+        }
+
+        .hero-sub {
+            max-width: 600px;
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            margin-bottom: 32px;
+            border-left: 3px solid var(--accent-yellow);
+            padding-left: 24px;
+        }
+
+        .motto {
+            font-style: italic;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border: 4px solid var(--border);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section */
+        .section {
+            padding: 120px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            color: var(--accent-yellow);
+            margin-bottom: 40px;
+        }
+
+        /* Profile Grid */
+        .grid-profile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .profile-image {
+            margin-bottom: 40px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            max-width: 400px;
+            border: 4px solid var(--border);
+        }
+
+        .facts-list {
+            list-style: none;
+        }
+
+        .fact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .fact-item svg {
+            color: var(--accent-yellow);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .warning-card {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid var(--accent-red);
+            padding: 32px;
+            margin-top: 40px;
+        }
+
+        .warning-card h4 {
+            color: var(--accent-red);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .warning-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .key-statement {
+            background: var(--bg-graphite);
+            padding: 24px;
+            margin-top: 24px;
+            border-left: 4px solid var(--text-dim);
+        }
+
+        .key-statement p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline Horizontal Scroll */
+        .timeline-container {
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .timeline-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 32px;
+            padding-bottom: 40px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-yellow) var(--bg-graphite);
+        }
+
+        .timeline-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .timeline-scroll::-webkit-scrollbar-track {
+            background: var(--bg-graphite);
+        }
+
+        .timeline-scroll::-webkit-scrollbar-thumb {
+            background: var(--accent-yellow);
+        }
+
+        .timeline-card {
+            min-width: 350px;
+            background: var(--bg-graphite);
+            padding: 32px;
+            border-top: 4px solid var(--text-dim);
+            transition: border-color 0.3s;
+            flex-shrink: 0;
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent-yellow);
+        }
+
+        .timeline-date {
+            color: var(--accent-yellow);
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .timeline-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .timeline-card strong {
+            color: var(--text-main);
+        }
+
+        .sticky-quote {
+            background: var(--accent-yellow);
+            color: #000;
+            padding: 20px 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-top: 40px;
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+            font-size: 1.1rem;
+        }
+
+        /* Institutional Block */
+        .institutional {
+            background: var(--archival-layer);
+            padding: 60px 40px;
+            border: 1px solid var(--border);
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .purpose-card {
+            padding: 24px;
+            border: 1px solid var(--border);
+            background: var(--bg-graphite);
+        }
+
+        .purpose-card .number {
+            color: var(--accent-yellow);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .purpose-card p {
+            color: var(--text-dim);
+        }
+
+        /* News Cards */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .news-card {
+            background: var(--bg-graphite);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
+            min-height: 220px;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card.urgent {
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .news-card .date {
+            color: var(--text-dim);
+            margin-bottom: 16px;
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .news-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 24px;
+            line-height: 1.4;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .read-more {
+            color: var(--accent-yellow);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Help Section */
+        .help-intro {
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .help-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .help-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-graphite);
+            padding: 24px 32px;
+            border-left: 4px solid var(--accent-yellow);
+            gap: 20px;
+        }
+
+        .help-item span {
+            font-size: 1.05rem;
+        }
+
+        .help-item .btn {
+            padding: 12px 24px;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* Contacts */
+        .contacts-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contacts-title {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .contacts a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contacts a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 100px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .final-cta {
+            font-size: clamp(1.3rem, 4vw, 2.2rem);
+            font-weight: 900;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            line-height: 1.3;
+        }
+
+        .footer-copy {
+            margin-top: 80px;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+
+        /* PDF & Print Optimizations */
+        @media print {
+            body { background: #fff; color: #000; }
+            body::before { display: none; }
+            .lang-toggle { display: none; }
+            .section { page-break-inside: avoid; border-color: #eee; }
+            .btn, .sticky-quote { background: #eee; color: #000; border: 1px solid #000; }
+            .timeline-scroll { overflow: visible; flex-wrap: wrap; }
+            .timeline-card { margin-bottom: 20px; border: 1px solid #eee; min-width: auto; width: 48%; }
+            .hero-image img { max-height: 300px; }
+            a { color: #000; }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid,
+            .grid-profile {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                order: -1;
+                margin-bottom: 40px;
+            }
+
+            .hero-image img {
+                max-height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-actions .btn { width: 100%; }
+            .section { padding: 60px 0; }
+            .timeline-card { min-width: 280px; }
+            .help-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .help-item .btn {
+                width: 100%;
+            }
+            .contacts {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .lang-toggle {
+                top: 12px;
+                right: 12px;
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ua" onclick="setLanguage('ua')">UA</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+    </div>
+
+    <!-- HERO BLOCK -->
+    <header class="hero container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <span class="mono hero-label">
+                    <span class="lang-ua">Платформа на захист прав</span>
+                    <span class="lang-en">Human Rights Platform</span>
+                </span>
+                <h1>
+                    <span class="lang-ua">Свободу Сергію Кузнєцову</span>
+                    <span class="lang-en">Free Serhii Kuznetsov</span>
+                </h1>
+                <div class="hero-sub">
+                    <span class="lang-ua">Військовослужбовець Сил спеціальних операцій ЗСУ. Доброволець. Наразі утримується під вартою в Німеччині без вироку суду.</span>
+                    <span class="lang-en">Soldier of the Special Operations Forces of Ukraine. Volunteer. Currently detained in Germany without a court verdict.</span>
+                </div>
+                <p class="mono motto">
+                    <span class="lang-ua">Наш обов'язок — захистити тих, хто захищав нас.</span>
+                    <span class="lang-en">Our duty is to protect those who protected us.</span>
+                </p>
+                <div class="hero-actions">
+                    <a href="#help" class="btn btn-primary">
+                        <span class="lang-ua">Підтримати кампанію</span>
+                        <span class="lang-en">Support Campaign</span>
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <span class="lang-ua">Долучитися до звернення</span>
+                        <span class="lang-en">Join the Appeal</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/238679cb-e1eb-4e8e-98e9-1a0132f21635.jpeg" alt="Serhii Kuznetsov">
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 2: WHO IS HE -->
+    <section class="section container">
+        <div class="grid-profile">
+            <div>
+                <h2 class="mono section-title">
+                    <span class="lang-ua">Хто такий Сергій Кузнєцов?</span>
+                    <span class="lang-en">Who is Serhii Kuznetsov?</span>
+                </h2>
+                <div class="profile-image">
+                    <img src="img/48d83316-098b-421d-8231-c59061fedd4e.jpeg" alt="Serhii Kuznetsov - #FreeSerhiiKuznetsov">
+                </div>
+                <div class="facts-list">
+                    <div class="fact-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>
+                            <span class="lang-ua">Військовослужбовець ССО ЗСУ</span>
+                            <span class="lang-en">Soldier of the Special Operations Forces of Ukraine</span>
+                        </span>
+                    </div>
+                    <div class="fact-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>
+                            <span class="lang-ua">Доброволець</span>
+                            <span class="lang-en">Volunteer</span>
+                        </span>
+                    </div>
+                    <div class="fact-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>
+                            <span class="lang-ua">Учасник бойових дій</span>
+                            <span class="lang-en">Combat veteran</span>
+                        </span>
+                    </div>
+                    <div class="fact-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>
+                            <span class="lang-ua">Утримується під вартою в м. Гамбург (ФРН)</span>
+                            <span class="lang-en">Detained in Hamburg, Germany</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="warning-card reveal">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        <span class="lang-ua">Важливо</span>
+                        <span class="lang-en">Important</span>
+                    </h4>
+                    <p>
+                        <span class="lang-ua">Сергій Кузнєцов є підозрюваним у справі щодо підриву газопроводів "Північний потік" та "Північний потік 2". Справа має винятково політичний та стратегічний резонанс.</span>
+                        <span class="lang-en">Serhii Kuznetsov is a suspect in the case regarding the sabotage of the "Nord Stream" and "Nord Stream 2" pipelines. The case has exceptional political and strategic resonance.</span>
+                    </p>
+                </div>
+                <div class="key-statement reveal">
+                    <p>
+                        <span class="lang-ua">Сергій Кузнєцов не має вироку суду. Кампанія не оцінює його провину і не втручається у слідство.</span>
+                        <span class="lang-en">Serhii Kuznetsov has not been convicted. The campaign does not judge his guilt and does not interfere with the investigation.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTEXT / TIMELINE -->
+    <section class="section container">
+        <h2 class="mono section-title">
+            <span class="lang-ua">Контекст справи / Таймлайн</span>
+            <span class="lang-en">Case Context / Timeline</span>
+        </h2>
+
+        <div class="timeline-container">
+            <div class="timeline-scroll">
+                <!-- 2022 -->
+                <div class="timeline-card reveal">
+                    <span class="timeline-date">2022</span>
+                    <p>
+                        <span class="lang-ua"><strong>Лютий:</strong> США вводять санкції проти Nord Stream 2 AG.<br><br><strong>26 вересня:</strong> Вибухи в Балтійському морі. Швеція та Данія фіксують підводні вибухи.<br><br><strong>Жовтень:</strong> Підтвердження диверсії (десятки кг вибухівки).</span>
+                        <span class="lang-en"><strong>February:</strong> US imposes sanctions on Nord Stream 2 AG.<br><br><strong>September 26:</strong> Explosions in the Baltic Sea. Sweden and Denmark record underwater explosions.<br><br><strong>October:</strong> Sabotage confirmed (dozens of kg of explosives).</span>
+                    </p>
+                </div>
+                <!-- 2023 -->
+                <div class="timeline-card reveal">
+                    <span class="timeline-date">2023</span>
+                    <p>
+                        <span class="lang-ua"><strong>Березень:</strong> Данія та Швеція оглядають місце вибуху з військовими.<br><br><strong>Червень:</strong> Публікації про участь групи водолазів з орендованої яхти.<br><br><strong>Липень:</strong> Данія закриває розслідування.</span>
+                        <span class="lang-en"><strong>March:</strong> Denmark and Sweden survey explosion site with military.<br><br><strong>June:</strong> Publications about divers from a rented yacht.<br><br><strong>July:</strong> Denmark closes investigation.</span>
+                    </p>
+                </div>
+                <!-- 2024 -->
+                <div class="timeline-card reveal">
+                    <span class="timeline-date">2024</span>
+                    <p>
+                        <span class="lang-ua"><strong>Лютий:</strong> Німеччина видає європейські ордери на арешт українців.<br><br><strong>Вересень:</strong> Швеція закриває своє розслідування.<br><br><strong>Грудень:</strong> США та ЄС повторно вводять санкції проти Nord Stream.</span>
+                        <span class="lang-en"><strong>February:</strong> Germany issues European arrest warrants for Ukrainians.<br><br><strong>September:</strong> Sweden closes its investigation.<br><br><strong>December:</strong> US and EU reimpose sanctions on Nord Stream.</span>
+                    </p>
+                </div>
+                <!-- 2025 -->
+                <div class="timeline-card reveal">
+                    <span class="timeline-date">2025</span>
+                    <p>
+                        <span class="lang-ua"><strong>21 серпня:</strong> В Італії затримано Сергія Кузнєцова.<br><br><strong>17 жовтня:</strong> Суд у Варшаві відмовляє у видачі Журавльова: "Дії в умовах справедливої війни не є злочином".</span>
+                        <span class="lang-en"><strong>August 21:</strong> Serhii Kuznetsov detained in Italy.<br><br><strong>October 17:</strong> Warsaw court refuses Zhuravlov's extradition: "Actions in a just war are not a crime."</span>
+                    </p>
+                </div>
+                <!-- 2025 Extradition -->
+                <div class="timeline-card reveal">
+                    <span class="timeline-date">
+                        <span class="lang-ua">Кінець 2025</span>
+                        <span class="lang-en">Late 2025</span>
+                    </span>
+                    <p>
+                        <span class="lang-ua"><strong>27 листопада:</strong> Італія екстрадує Кузнєцова до Німеччини.<br><br><strong>28 листопада:</strong> Офіційний арешт у Гамбурзі.</span>
+                        <span class="lang-en"><strong>November 27:</strong> Italy extradites Kuznetsov to Germany.<br><br><strong>November 28:</strong> Official arrest in Hamburg.</span>
+                    </p>
+                </div>
+                <!-- 2026 -->
+                <div class="timeline-card reveal">
+                    <span class="timeline-date">2026</span>
+                    <p>
+                        <span class="lang-ua"><strong>15-16 січня:</strong> Федеральний суд Німеччини відхиляє апеляцію та залишає Кузнєцова під вартою.</span>
+                        <span class="lang-en"><strong>January 15-16:</strong> German Federal Court rejects appeal and keeps Kuznetsov in custody.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="sticky-quote">
+                <span class="lang-ua">Злочином було будівництво Північних потоків, а не їх підрив</span>
+                <span class="lang-en">The crime was building Nord Stream, not destroying it</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTITUTIONAL -->
+    <section class="section container">
+        <div class="institutional">
+            <h2 class="mono section-title">
+                <span class="lang-ua">Ініціатива родини</span>
+                <span class="lang-en">Family Initiative</span>
+            </h2>
+            <p style="max-width: 800px; font-size: 1.1rem; color: var(--text-dim);">
+                <span class="lang-ua">Дружина Сергія Кузнєцова офіційно звернулася до Уповноваженого Верховної Ради України з прав людини для створення робочої групи.</span>
+                <span class="lang-en">Serhii Kuznetsov's wife officially appealed to the Ukrainian Parliament Commissioner for Human Rights to create a working group.</span>
+            </p>
+
+            <div class="purpose-grid">
+                <div class="purpose-card reveal">
+                    <span class="number">01</span>
+                    <p>
+                        <span class="lang-ua">Моніторинг дотримання прав людини</span>
+                        <span class="lang-en">Monitoring human rights compliance</span>
+                    </p>
+                </div>
+                <div class="purpose-card reveal">
+                    <span class="number">02</span>
+                    <p>
+                        <span class="lang-ua">Аналіз умов тримання під вартою</span>
+                        <span class="lang-en">Analysis of detention conditions</span>
+                    </p>
+                </div>
+                <div class="purpose-card reveal">
+                    <span class="number">03</span>
+                    <p>
+                        <span class="lang-ua">Забезпечення правової процедури</span>
+                        <span class="lang-en">Ensuring legal procedure</span>
+                    </p>
+                </div>
+                <div class="purpose-card reveal">
+                    <span class="number">04</span>
+                    <p>
+                        <span class="lang-ua">Взаємодія з міжнародними інституціями</span>
+                        <span class="lang-en">Cooperation with international institutions</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section container">
+        <h2 class="mono section-title">
+            <span class="lang-ua">Новини кампанії</span>
+            <span class="lang-en">Campaign News</span>
+        </h2>
+        <div class="news-grid">
+            <div class="news-card reveal">
+                <div>
+                    <span class="date">
+                        <span class="lang-ua">27 грудня 2025</span>
+                        <span class="lang-en">December 27, 2025</span>
+                    </span>
+                    <h3>
+                        <span class="lang-ua">Дружина Сергія Кузнєцова звернулася до Омбудсмена</span>
+                        <span class="lang-en">Kuznetsov's wife appealed to the Ombudsman</span>
+                    </h3>
+                </div>
+                <a href="#" class="read-more">
+                    <span class="lang-ua">Читати [→]</span>
+                    <span class="lang-en">Read more [→]</span>
+                </a>
+            </div>
+            <div class="news-card urgent reveal">
+                <div>
+                    <span class="date">
+                        <span class="lang-ua">15 січня 2026</span>
+                        <span class="lang-en">January 15, 2026</span>
+                    </span>
+                    <h3>
+                        <span class="lang-ua">Умови утримання в Гамбурзі мають ознаки нелюдського поводження</span>
+                        <span class="lang-en">Hamburg detention conditions show signs of inhumane treatment</span>
+                    </h3>
+                </div>
+                <a href="#" class="read-more">
+                    <span class="lang-ua">Читати [→]</span>
+                    <span class="lang-en">Read more [→]</span>
+                </a>
+            </div>
+            <div class="news-card reveal">
+                <div>
+                    <span class="date">
+                        <span class="lang-ua">16 квітня 2024</span>
+                        <span class="lang-en">April 16, 2024</span>
+                    </span>
+                    <h3>
+                        <span class="lang-ua">Правозахисники коментують ризики у резонансних справах</span>
+                        <span class="lang-en">Human rights advocates comment on risks in high-profile cases</span>
+                    </h3>
+                </div>
+                <a href="#" class="read-more">
+                    <span class="lang-ua">Читати [→]</span>
+                    <span class="lang-en">Read more [→]</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO HELP -->
+    <section id="help" class="section container">
+        <h2 class="mono section-title">
+            <span class="lang-ua">Як ви можете допомогти</span>
+            <span class="lang-en">How You Can Help</span>
+        </h2>
+        <p class="help-intro">
+            <span class="lang-ua">Публічна увага — це форма захисту.</span>
+            <span class="lang-en">Public attention is a form of protection.</span>
+        </p>
+
+        <div class="help-list">
+            <div class="help-item reveal">
+                <span>
+                    <span class="lang-ua">Підписати публічне звернення</span>
+                    <span class="lang-en">Sign the public appeal</span>
+                </span>
+                <a href="#" class="btn btn-outline">
+                    <span class="lang-ua">Підписати</span>
+                    <span class="lang-en">Sign</span>
+                </a>
+            </div>
+            <div class="help-item reveal">
+                <span>
+                    <span class="lang-ua">Підтримати кампанію фінансово</span>
+                    <span class="lang-en">Support the campaign financially</span>
+                </span>
+                <a href="#" class="btn btn-green">
+                    <span class="lang-ua">Підтримати</span>
+                    <span class="lang-en">Donate</span>
+                </a>
+            </div>
+            <div class="help-item reveal">
+                <span>
+                    <span class="lang-ua">Підписатися на оновлення кампанії</span>
+                    <span class="lang-en">Subscribe to campaign updates</span>
+                </span>
+                <a href="#" class="btn btn-outline">
+                    <span class="lang-ua">Підписка</span>
+                    <span class="lang-en">Subscribe</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="contacts-section container">
+        <h3 class="mono contacts-title">
+            <span class="lang-ua">Контакти для медіа</span>
+            <span class="lang-en">Media Contacts</span>
+        </h3>
+        <div class="contacts">
+            <span>+380 XXX XXX XX XX</span>
+            <a href="mailto:freekuznetsov@gmail.com">freekuznetsov@gmail.com</a>
+            <div class="social-links">
+                <a href="#">FB</a>
+                <a href="#">TG</a>
+                <a href="#">X</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL BLOCK -->
+    <footer class="container">
+        <div class="final-cta">
+            <span class="lang-ua">Ми не маємо права залишити сам на сам тих, хто добровільно пішов захищати нас.</span>
+            <span class="lang-en">We have no right to abandon those who voluntarily went to protect us.</span>
+        </div>
+        <a href="#help" class="btn btn-primary" style="font-size: 1.1rem; padding: 24px 50px;">
+            <span class="lang-ua">Підтримати кампанію</span>
+            <span class="lang-en">Support Campaign</span>
+        </a>
+        <p class="mono footer-copy">FREEKUZNETSOV.ORG &copy; 2025-2026</p>
+    </footer>
+
+    <script>
+        // Language switching
+        function setLanguage(lang) {
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            localStorage.setItem('preferred-lang', lang);
+            history.replaceState(null, '', '#' + lang);
+        }
+
+        // Initialize language
+        document.addEventListener('DOMContentLoaded', function() {
+            let lang = 'ua';
+            if (window.location.hash === '#en') {
+                lang = 'en';
+            } else if (window.location.hash === '#ua') {
+                lang = 'ua';
+            } else if (localStorage.getItem('preferred-lang')) {
+                lang = localStorage.getItem('preferred-lang');
+            }
+            setLanguage(lang);
+
+            // Scroll reveal animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.length > 1 && href !== '#ua' && href !== '#en') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

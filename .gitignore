@@ -1,0 +1,16 @@
+# Next.js / Node
+node_modules/
+.next/
+out/
+
+# Local runtime data
+*.log
+data/*.db
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Local backup artifacts
+node_modules_bad_*/
+package-lock.bad_*
