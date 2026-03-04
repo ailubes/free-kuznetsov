@@ -22,7 +22,11 @@ export async function POST(request) {
       return NextResponse.json({ ok: false, message: 'Вкажіть коректний email.' }, { status: 400 });
     }
 
-    await addSupporter({ name, email, support: true });
+    const savedId = await addSupporter({ name, email, support: true });
+    if (!savedId) {
+      return NextResponse.json({ ok: false, message: 'Сховище тимчасово недоступне.' }, { status: 503 });
+    }
+
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ ok: false, message: 'Помилка збереження даних.' }, { status: 500 });

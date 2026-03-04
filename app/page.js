@@ -7,6 +7,7 @@ import { getSupportersCount } from '@/lib/support-store';
 import { news, timeline } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 export default async function HomePage() {
   const supportersCount = await getSupportersCount();
