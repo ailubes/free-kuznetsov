@@ -3,13 +3,13 @@ import CampaignActions from '@/components/campaign-actions';
 import HeroUtilities from '@/components/hero-utilities';
 import ShareButton from '@/components/share-button';
 import { DetentionCounter, TemplateControls } from '@/components/template-controls';
-import { getSupportersCount } from '@/lib/support-db';
+import { getSupportersCount } from '@/lib/support-store';
 import { news, timeline } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
 
-export default function HomePage() {
-  const supportersCount = getSupportersCount();
+export default async function HomePage() {
+  const supportersCount = await getSupportersCount();
 
   return (
     <main>

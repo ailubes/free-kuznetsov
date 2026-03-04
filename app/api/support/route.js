@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { addSupporter } from '@/lib/support-db';
+import { addSupporter } from '@/lib/support-store';
 
 export const runtime = 'nodejs';
 
@@ -22,7 +22,7 @@ export async function POST(request) {
       return NextResponse.json({ ok: false, message: 'Вкажіть коректний email.' }, { status: 400 });
     }
 
-    addSupporter({ name, email, support: true });
+    await addSupporter({ name, email, support: true });
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ ok: false, message: 'Помилка збереження даних.' }, { status: 500 });

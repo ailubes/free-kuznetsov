@@ -14,3 +14,5 @@ Thumbs.db
 # Local backup artifacts
 node_modules_bad_*/
 package-lock.bad_*
+
+data/supporters.json
